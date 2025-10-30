@@ -1,0 +1,9 @@
+[
+  {
+    "firstName": "Owen",
+    "lastName": "Adams",
+    "birthday": 123456,
+    "address": "9 River Road, Boston, MA",
+    "phoneNumber": true
+  }
+]

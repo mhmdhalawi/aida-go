@@ -1,0 +1,72 @@
+[
+  {
+    "firstName": "John",
+    "lastName": "Doe",
+    "birthday": "1990-05-14T00:00:00Z",
+    "address": "123 Main Street, New York, NY",
+    "phoneNumber": "+1-555-1234"
+  },
+  {
+    "firstName": "Emma",
+    "lastName": "Smith",
+    "birthday": "1988-11-02T00:00:00Z",
+    "address": "45 Park Avenue, Los Angeles, CA",
+    "phoneNumber": "+1-555-5678"
+  },
+  {
+    "firstName": "Liam",
+    "lastName": "Johnson",
+    "birthday": "1995-09-23T00:00:00Z",
+    "address": "78 Elm Street, Chicago, IL",
+    "phoneNumber": "+1-555-9012"
+  },
+  {
+    "firstName": "Olivia",
+    "lastName": "Brown",
+    "birthday": "1992-03-17T00:00:00Z",
+    "address": "12 River Road, Houston, TX",
+    "phoneNumber": "+1-555-3456"
+  },
+  {
+    "firstName": "Noah",
+    "lastName": "Williams",
+    "birthday": "1987-07-08T00:00:00Z",
+    "address": "56 Oak Lane, Phoenix, AZ",
+    "phoneNumber": "+1-555-7890"
+  },
+  {
+    "firstName": "Ava",
+    "lastName": "Jones",
+    "birthday": "1993-12-25T00:00:00Z",
+    "address": "90 Maple Avenue, Philadelphia, PA",
+    "phoneNumber": "+1-555-2345"
+  },
+  {
+    "firstName": "James",
+    "lastName": "Garcia",
+    "birthday": "1991-01-30T00:00:00Z",
+    "address": "67 Pine Street, San Antonio, TX",
+    "phoneNumber": "+1-555-6789"
+  },
+  {
+    "firstName": "Sophia",
+    "lastName": "Miller",
+    "birthday": "1989-10-05T00:00:00Z",
+    "address": "89 Cedar Road, San Diego, CA",
+    "phoneNumber": "+1-555-0123"
+  },
+  {
+    "firstName": "Elijah",
+    "lastName": "Davis",
+    "birthday": "1996-04-22T00:00:00Z",
+    "address": "34 Birch Lane, Dallas, TX",
+    "phoneNumber": "+1-555-4567"
+  },
+  {
+    "firstName": "Isabella",
+    "lastName": "Martinez",
+    "birthday": "1994-08-11T00:00:00Z",
+    "address": "22 Cherry Blvd, Austin, TX",
+    "phoneNumber": "+1-555-8901"
+  }
+]
