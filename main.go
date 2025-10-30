@@ -1,21 +1,24 @@
 package main
 
 import (
-	"fmt"
 	"log"
+	"net/http"
 
-	"github.com/mhmdhalawi/aida-go/pkg/user"
+	"github.com/mhmdhalawi/aida-go/middleware"
+	"github.com/mhmdhalawi/aida-go/routes"
+	"github.com/mhmdhalawi/aida-go/utils"
 )
 
 func main() {
-	users, err := user.LoadFromFolder("./data")
+	users, err := utils.LoadFromFolder("./data")
 	if err != nil {
 		log.Fatalf("Failed to load users: %v", err)
 	}
 
-	fmt.Printf("Loaded %d valid entries:\n", len(users))
-	for _, u := range users {
-		fmt.Printf("%s %s, Birthday: %s, Phone: %s\n",
-			u.FirstName, u.LastName, u.Birthday.Format("2006-01-02"), u.PhoneNumber)
+	http.Handle("GET /users", middleware.WithJSONHeaders(routes.Users(users)))
+
+	log.Printf("HTTP server listening on :8080")
+	if err := http.ListenAndServe(":8080", nil); err != nil {
+		log.Fatalf("server error: %v", err)
 	}
 }

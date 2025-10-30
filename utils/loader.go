@@ -1,4 +1,4 @@
-package user
+package utils
 
 import (
 	"encoding/json"
@@ -6,11 +6,13 @@ import (
 	"log"
 	"os"
 	"path/filepath"
+
+	"github.com/mhmdhalawi/aida-go/models"
 )
 
 // LoadFromFolder reads all JSON files in a folder
-func LoadFromFolder(folder string) ([]User, error) {
-	var people []User
+func LoadFromFolder(folder string) ([]models.User, error) {
+	var people []models.User
 
 	err := filepath.Walk(folder, func(path string, info os.FileInfo, err error) error {
 		if err != nil {
@@ -28,7 +30,7 @@ func LoadFromFolder(folder string) ([]User, error) {
 			return nil
 		}
 
-		var filePeople []User
+		var filePeople []models.User
 		if err := json.Unmarshal(fileContent, &filePeople); err != nil {
 			log.Printf("Failed to parse %s: %v", path, err)
 			return nil
