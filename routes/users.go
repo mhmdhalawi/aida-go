@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"log"
 	"net/http"
+	"strconv"
 	"strings"
 	"time"
 
@@ -25,23 +26,48 @@ func Users() http.Handler {
 		var fromDatePtr, toDatePtr *time.Time
 
 		// If q contains a recognizable range, use it to set from/to and ignore name search.
-		if query != "" {
-			if qFrom, qTo, ok := ParseDateRange(query); ok {
-				fromDatePtr = &qFrom
-				toDatePtr = &qTo
 
-			}
-
-			filteredUsers := filterUsers(users, query, fromDatePtr, toDatePtr)
-
-			if err := json.NewEncoder(w).Encode(filteredUsers); err != nil {
-				http.Error(w, "failed to encode response", http.StatusInternalServerError)
-				return
-			}
+		if qFrom, qTo, ok := ParseDateRange(query); ok {
+			fromDatePtr = &qFrom
+			toDatePtr = &qTo
 
 		}
 
+		filteredUsers := filterUsers(users, query, fromDatePtr, toDatePtr)
+
+		cursorStr := strings.TrimSpace(r.URL.Query().Get("cursor"))
+		cursor, err := strconv.Atoi(cursorStr)
+		if err != nil {
+			cursor = 0
+		}
+
+		max := 5
+
+		start := min(cursor, len(filteredUsers))
+
+		end := min(start+max, len(filteredUsers))
+
+		page := filteredUsers[start:end]
+
+		// Next cursor
+		nextCursor := end
+		if nextCursor >= len(filteredUsers) {
+			nextCursor = -1 // indicate no more pages
+		}
+
+		// Response
+		resp := map[string]any{
+			"users":      page,
+			"nextCursor": nextCursor,
+		}
+
+		if err := json.NewEncoder(w).Encode(resp); err != nil {
+			http.Error(w, "failed to encode response", http.StatusInternalServerError)
+			return
+		}
+
 	})
+
 }
 
 func filterUsers(users []models.User, query string, fromDatePtr, toDatePtr *time.Time) []models.User {
