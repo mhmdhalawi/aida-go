@@ -59,6 +59,7 @@ func Users() http.Handler {
 		resp := map[string]any{
 			"users":      page,
 			"nextCursor": nextCursor,
+			"total":      len(filteredUsers),
 		}
 
 		if err := json.NewEncoder(w).Encode(resp); err != nil {

@@ -12,7 +12,7 @@ import (
 
 // LoadFromFolder reads all JSON files in a folder
 func LoadFromFolder(folder string) ([]models.User, error) {
-	var people []models.User
+	var users []models.User
 
 	err := filepath.Walk(folder, func(path string, info os.FileInfo, err error) error {
 		if err != nil {
@@ -23,6 +23,8 @@ func LoadFromFolder(folder string) ([]models.User, error) {
 		if info.IsDir() || filepath.Ext(path) != ".json" {
 			return nil
 		}
+
+		log.Printf("Checking file: %s", path)
 
 		fileContent, err := os.ReadFile(path)
 		if err != nil {
@@ -36,12 +38,12 @@ func LoadFromFolder(folder string) ([]models.User, error) {
 			return nil
 		}
 
-		for _, p := range filePeople {
-			if p.FirstName == "" || p.LastName == "" || p.Address == "" || p.PhoneNumber == "" || p.Birthday.IsZero() {
-				log.Printf("Skipping incomplete entry in %s: %+v", path, p)
+		for _, u := range filePeople {
+			if u.ID == 0 || u.FirstName == "" || u.LastName == "" || u.Address == "" || u.PhoneNumber == "" || u.Birthday.IsZero() {
+				log.Printf("Skipping incomplete entry in %s: %+v", path, u)
 				continue
 			}
-			people = append(people, p)
+			users = append(users, u)
 		}
 
 		return nil
@@ -51,5 +53,5 @@ func LoadFromFolder(folder string) ([]models.User, error) {
 		return nil, fmt.Errorf("error walking folder: %w", err)
 	}
 
-	return people, nil
+	return users, nil
 }

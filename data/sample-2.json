@@ -1,72 +1,82 @@
 [
   {
-    "firstName": "Michael",
-    "lastName": "Anderson",
+    "id": 11,
+    "first_name": "Michael",
+    "last_name": "Anderson",
     "birthday": "1985-02-19T00:00:00Z",
     "address": "101 Lakeview Drive, Seattle, WA",
-    "phoneNumber": "+1-555-1111"
+    "phone_number": "+1-555-1111"
   },
   {
-    "firstName": "Charlotte",
-    "lastName": "Thompson",
+    "id": 12,
+    "first_name": "Charlotte",
+    "last_name": "Thompson",
     "birthday": "1992-06-07T00:00:00Z",
     "address": "72 Hillcrest Road, Denver, CO",
-    "phoneNumber": "+1-555-2222"
+    "phone_number": "+1-555-2222"
   },
   {
-    "firstName": "Benjamin",
-    "lastName": "White",
+    "id": 13,
+    "first_name": "Benjamin",
+    "last_name": "White",
     "birthday": "1997-09-15T00:00:00Z",
     "address": "88 Meadow Lane, Miami, FL",
-    "phoneNumber": "+1-555-3333"
+    "phone_number": "+1-555-3333"
   },
   {
-    "firstName": "Amelia",
-    "lastName": "Clark",
+    "id": 14,
+    "first_name": "Amelia",
+    "last_name": "Clark",
     "birthday": "1990-12-01T00:00:00Z",
     "address": "25 Ocean Avenue, San Francisco, CA",
-    "phoneNumber": "+1-555-4444"
+    "phone_number": "+1-555-4444"
   },
   {
-    "firstName": "Henry",
-    "lastName": "Lewis",
+    "id": 15,
+    "first_name": "Henry",
+    "last_name": "Lewis",
     "birthday": "1989-04-09T00:00:00Z",
     "address": "60 Sunset Blvd, Las Vegas, NV",
-    "phoneNumber": "+1-555-5555"
+    "phone_number": "+1-555-5555"
   },
   {
-    "firstName": "Mia",
-    "lastName": "Walker",
+    "id": 16,
+    "first_name": "Mia",
+    "last_name": "Walker",
     "birthday": "1993-10-21T00:00:00Z",
     "address": "15 Palm Street, Orlando, FL",
-    "phoneNumber": "+1-555-6666"
+    "phone_number": "+1-555-6666"
   },
   {
-    "firstName": "Alexander",
-    "lastName": "Hall",
+    "id": 17,
+    "first_name": "Alexander",
+    "last_name": "Hall",
     "birthday": "1998-07-12T00:00:00Z",
     "address": "39 Valley Road, Portland, OR",
-    "phoneNumber": "+1-555-7777"
+    "phone_number": "+1-555-7777"
   },
   {
-    "firstName": "Harper",
-    "lastName": "Allen",
+    "id": 18,
+    "first_name": "Harper",
+    "last_name": "Allen",
     "birthday": "1991-05-03T00:00:00Z",
     "address": "47 Forest Drive, Boston, MA",
-    "phoneNumber": "+1-555-8888"
+    "phone_number": "+1-555-8888"
   },
   {
-    "firstName": "Daniel",
-    "lastName": "Young",
+    "id": 19,
+    "first_name": "Daniel",
+    "last_name": "Young",
     "birthday": "1996-08-29T00:00:00Z",
     "address": "66 Pinewood Avenue, Atlanta, GA",
-    "phoneNumber": "+1-555-9999"
+    "phone_number": "+1-555-9999"
   },
   {
-    "firstName": "Evelyn",
-    "lastName": "Hernandez",
+    "id": 20,
+    "first_name": "Evelyn",
+    "last_name": "Hernandez",
     "birthday": "1987-11-18T00:00:00Z",
     "address": "90 Brookside Street, Minneapolis, MN",
-    "phoneNumber": "+1-555-0000"
+    "phone_number": "+1-555-0000"
   }
 ]
