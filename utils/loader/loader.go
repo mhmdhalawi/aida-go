@@ -1,4 +1,4 @@
-package utils
+package loader
 
 import (
 	"encoding/json"
@@ -13,6 +13,15 @@ import (
 // LoadFromFolder reads all JSON files in a folder
 func LoadFromFolder(folder string) ([]models.User, error) {
 	var users []models.User
+
+	// Ensure the folder exists and is a directory
+	info, statErr := os.Stat(folder)
+	if statErr != nil {
+		return nil, fmt.Errorf("folder does not exist: %w", statErr)
+	}
+	if !info.IsDir() {
+		return nil, fmt.Errorf("path is not a directory: %s", folder)
+	}
 
 	err := filepath.Walk(folder, func(path string, info os.FileInfo, err error) error {
 		if err != nil {

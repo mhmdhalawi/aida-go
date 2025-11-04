@@ -9,13 +9,13 @@ import (
 	"time"
 
 	"github.com/mhmdhalawi/aida-go/models"
-	"github.com/mhmdhalawi/aida-go/utils"
+	"github.com/mhmdhalawi/aida-go/utils/loader"
 )
 
 // Users returns an http.Handler that writes the users as JSON.
 func Users() http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		users, err := utils.LoadFromFolder("./data")
+		users, err := loader.LoadFromFolder("./data")
 		if err != nil {
 			log.Fatalf("Failed to load users: %v", err)
 		}
