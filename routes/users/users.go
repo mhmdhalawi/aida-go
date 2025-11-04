@@ -1,4 +1,4 @@
-package routes
+package users
 
 import (
 	"encoding/json"
@@ -86,7 +86,10 @@ func filterUsers(users []models.User, query string, fromDatePtr, toDatePtr *time
 		}
 
 		if fromDatePtr != nil && toDatePtr != nil {
-			if birthday.After(fromDatePtr.Truncate(24*time.Hour)) && birthday.Before(toDatePtr.Truncate(24*time.Hour)) {
+			from := fromDatePtr.Truncate(24 * time.Hour)
+			to := toDatePtr.Truncate(24 * time.Hour)
+
+			if !birthday.Before(from) && !birthday.After(to) {
 				filteredUsers = append(filteredUsers, u)
 			}
 			continue

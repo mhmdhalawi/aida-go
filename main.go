@@ -5,7 +5,7 @@ import (
 	"net/http"
 
 	"github.com/mhmdhalawi/aida-go/middleware"
-	"github.com/mhmdhalawi/aida-go/routes"
+	routes "github.com/mhmdhalawi/aida-go/routes/users"
 )
 
 func main() {
